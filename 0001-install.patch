@@ -1,0 +1,44 @@
+From 82867d73ca5213fef51dec798af4d09153af8fed Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 17 Sep 2024 14:36:40 +0800
+Subject: [PATCH] install
+
+---
+ v2rock/app-entry/v2rock.desktop | 4 ++--
+ v2rock/v2rock.pro               | 8 ++++++++
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/v2rock/app-entry/v2rock.desktop b/v2rock/app-entry/v2rock.desktop
+index b683953..eb6e659 100644
+--- a/v2rock/app-entry/v2rock.desktop
++++ b/v2rock/app-entry/v2rock.desktop
+@@ -2,7 +2,7 @@
+ Type=Application
+ Name=V2Rock
+ Comment=GUI for v2ray
+-Exec=/usr/bin/v2rock
+-Icon=/usr/share/pixmaps/v2rock.png
++Exec=v2rock
++Icon=v2rock
+ Terminal=false
+ Categories=Network;Application;
+diff --git a/v2rock/v2rock.pro b/v2rock/v2rock.pro
+index c3d9c59..fcc69b5 100644
+--- a/v2rock/v2rock.pro
++++ b/v2rock/v2rock.pro
+@@ -76,3 +76,11 @@ RESOURCES += \
+ 
+ TRANSLATIONS += \
+     $$PWD/languages/v2rock_zh_CN.ts
++
++target.path = $$PREFIX/bin
++desktop.files = app-entry/v2rock.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/apps/
++icons.files = app-entry/v2rock.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.43.4
+
